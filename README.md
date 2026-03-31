@@ -1,5 +1,9 @@
 # /last30days v3.0-local（中文改编版）
 
+🔥 A China-focused last-30-days trend analysis skill across X, Weibo, Xiaohongshu, and Douyin.  
+🚀 Produces structured Chinese insight reports with cross-platform overlap, regional split, and emerging signals.  
+⭐ Designed for fast trend intelligence, content planning, and decision-ready briefs.
+
 > 中文别名建议：**last30中国趋势**（为兼容现有调用，技能名仍保留 `last30days`）
 
 这个版本是基于原仓库改编的本地变体，定位是：
@@ -127,4 +131,3 @@ python3 scripts/last30days.py "你的主题" \
 
 - 原项目：`mvanhorn/last30days-skill`
 - 许可证：MIT
-
