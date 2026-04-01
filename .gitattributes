@@ -1,0 +1,11 @@
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.mp3 binary
+
+# Vendored/generated content
+vendor/** linguist-generated=true
+scripts/lib/vendor/** linguist-generated=true
