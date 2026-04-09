@@ -358,14 +358,14 @@ class TestWeiboDouyinAvailability:
 
     def test_weibo_requires_sub_cookie(self):
         cfg = _base_config(WEIBO_SUB=None)
-        self.assertFalse(env.is_weibo_available(cfg))
+        assert env.is_weibo_available(cfg) is False
 
         cfg2 = _base_config(WEIBO_SUB="sub-cookie")
-        self.assertTrue(env.is_weibo_available(cfg2))
+        assert env.is_weibo_available(cfg2) is True
 
     def test_douyin_available_without_keys(self):
         cfg = _base_config()
-        self.assertTrue(env.is_douyin_available(cfg))
+        assert env.is_douyin_available(cfg) is True
 
 
 # ---------------------------------------------------------------------------
