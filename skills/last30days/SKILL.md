@@ -11,6 +11,6 @@ This file exists so package scanners see a valid skill document instead of a bro
 
 Do not use this stub for normal work. The real skill entry lives at:
 
-- `/Users/liuzhuoran/.codex/skills/last30days/SKILL.md`
+- `/Users/however-yir/.codex/skills/last30days/SKILL.md`
 
 If this stub is loaded accidentally, switch to the parent `last30days` skill and continue there.

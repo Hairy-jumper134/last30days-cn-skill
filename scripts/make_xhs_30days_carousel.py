@@ -5,7 +5,7 @@ import random
 W, H = 1242, 1660
 PAGES = 6
 
-OUT_DIR = Path('/Users/liuzhuoran/Documents/Playground/last30days-cn-skill/assets/xhs_30days_share')
+OUT_DIR = Path('/Users/however-yir/Documents/Playground/last30days-cn-skill/assets/xhs_30days_share')
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 FONT_SONGTI = '/System/Library/Fonts/Supplemental/Songti.ttc'
