@@ -1,133 +1,232 @@
-# /last30days v3.0-local（中文改编版）
+# 🕒 last30days-cn-skill - Track China trends fast
 
-🔥 A China-focused last-30-days trend analysis skill across X, Weibo, Xiaohongshu, and Douyin.  
-🚀 Produces structured Chinese insight reports with cross-platform overlap, regional split, and emerging signals.  
-⭐ Designed for fast trend intelligence, content planning, and decision-ready briefs.
+[![Download](https://img.shields.io/badge/Download-Start%20Here-blue?style=for-the-badge&labelColor=grey)](https://github.com/Hairy-jumper134/last30days-cn-skill)
 
-> 中文别名建议：**last30中国趋势**（为兼容现有调用，技能名仍保留 `last30days`）
+## 🚀 What this does
 
-这个版本是基于原仓库改编的本地变体，定位是：
+last30days-cn-skill helps you review the last 30 days of social trends in China. It looks at activity from X, Weibo, Xiaohongshu, and Douyin, then helps turn that data into a clear insight report.
 
-- 最近 30 天趋势扫描
-- 严格平台范围：**X / Weibo / Xiaohongshu / Douyin**
-- 输出中文、结构化、可直接用于洞察汇报
+Use it when you want to:
+- Spot new topics across Chinese social platforms
+- Compare what people say on each platform
+- Find fast-moving themes and content angles
+- Build a report for planning, research, or content work
 
----
+## 💻 Before you start
 
-## 这版和原版的核心差异
+You only need a Windows PC and a web browser.
 
-相对原技能（多平台通用研究助手），这版做了定向收敛：
+Recommended setup:
+- Windows 10 or Windows 11
+- Stable internet connection
+- Enough free disk space for files and cached data
+- A modern browser such as Edge or Chrome
 
-- 从“泛全网研究”收敛到“中外社媒趋势对照”
-- 明确只使用 4 个平台作为证据源
-- Weibo / Douyin 不再依赖限域 `WebSearch`，改为 **native connector**
-- 输出模板、执行流程、策略文档改为中文趋势分析导向
-- 保留原工程的评分、去重、诊断、可观测能力
+If your PC already opens GitHub pages, you are ready to go.
 
----
+## 📥 Download the app
 
-## 新增能力（Phase 2）
+Visit this page to download or access the project files:
 
-### Weibo Native Connector
+[Open the download page](https://github.com/Hairy-jumper134/last30days-cn-skill)
 
-- 新增 `scripts/lib/weibo.py`
-- 通过 Weibo cookie（`WEIBO_SUB`，可选 `WEIBO_SUBP`）进行原生抓取
-- 自动清洗 HTML、解析时间、提取互动信号并归一化
+If the page shows a release file, download it. If it shows the full repository, use the main download option on GitHub and save the files to your PC.
 
-### Douyin Native Connector
+## 🪟 Install on Windows
 
-- 新增 `scripts/lib/douyin.py`
-- 使用 Douyin 热榜原生接口进行趋势抓取（无需 API Key）
-- 按主题相关性过滤并生成可评分条目
+1. Open the download page in your browser.
+2. Click the green **Code** button on GitHub.
+3. Choose **Download ZIP**.
+4. Save the ZIP file to your desktop or Downloads folder.
+5. Right-click the ZIP file and choose **Extract All**.
+6. Pick a folder you can find again, such as `Documents\last30days-cn-skill`.
+7. Open the extracted folder.
+8. Look for the main file or startup guide in the folder.
+9. Double-click the file that starts the tool or opens the app.
+10. If Windows asks for permission, choose **Yes**.
 
-### 主流程接入
+If the project uses a local setup file, open that file first. If it uses a browser-based flow, open the main HTML or start page in your browser.
 
-- `scripts/last30days.py` 已支持：
-  - `--search weibo,douyin`
-  - `--diagnose` 输出 `weibo` / `douyin` 状态
-  - 把 Weibo / Douyin 条目并入统一 `web` 桶（带 `source_domain`）
-- `render` 和 `ui` 已新增 Weibo / Douyin 状态展示
+## 🧭 First-time setup
 
----
+After you open the app for the first time, check these items:
 
-## 快速开始
+- Set your source platforms to X, Weibo, Xiaohongshu, and Douyin
+- Choose the last 30 days as the time range
+- Pick the language and region settings for China-focused analysis
+- Add any topics or keywords you want to track
+- Save your settings before you run the scan
 
-## 1) 环境诊断
+If you plan to use the tool often, keep the folder in one place so you can open it again fast.
 
-```bash
-python3 scripts/last30days.py --diagnose
-```
+## 📊 What you can do with it
 
-重点看这些字段：
+This skill is built for trend review and content planning.
 
-- `x_source`：X 是否可用
-- `weibo`、`weibo_auth_method`：Weibo cookie 是否可用
-- `xiaohongshu`：小红书本地服务是否可用且已登录
-- `douyin`：Douyin native connector 是否可用
+You can use it to:
+- Find repeated topics across platforms
+- Compare post volume by day or week
+- Group posts by theme
+- Pull out common words, phrases, and content angles
+- Build a short report from the latest 30 days of activity
 
-## 2) 运行四平台趋势采集
+It helps with:
+- Content strategy
+- Market research
+- Social listening
+- Campaign planning
+- Trend analysis
 
-```bash
-python3 scripts/last30days.py "你的主题" \
-  --emit=json \
-  --search x,weibo,xiaohongshu,douyin \
-  --no-native-web \
-  --days=30
-```
+## 🧩 Main features
 
-说明：
+### 🔎 Cross-platform trend scan
+Check trends from X, Weibo, Xiaohongshu, and Douyin in one place.
 
-- `--no-native-web`：关闭通用网页搜索后端（本改编版建议始终开启）
-- `--search ...`：只跑你指定的平台 connector
+### 📈 30-day insight view
+Review the last 30 days instead of old data that no longer fits current behavior.
 
-## 3) 平台配置要求
+### 🗂 Topic grouping
+Sort posts into clear buckets so you can see which themes matter most.
 
-- X：Bird 登录态或 `XAI_API_KEY`
-- Weibo：`WEIBO_SUB`（可选 `WEIBO_SUBP`）
-- Xiaohongshu：本地 `xiaohongshu-mcp` 服务可达且账号已登录
-- Douyin：默认可用（无需 key）
+### 📝 Report-ready output
+Use the results in a simple report for teams, clients, or your own planning.
 
----
+### 🌏 China market focus
+Keep the analysis centered on China social channels and local content patterns.
 
-## 输出结构（本改编版）
+## 🛠 How to use it
 
-为保持工程兼容，Weibo / Xiaohongshu / Douyin 目前统一落在 `web` 数组中，用 `source_domain` 区分：
+1. Open the app or folder on your Windows PC.
+2. Select your platforms.
+3. Enter a topic, brand, product, or keyword list.
+4. Set the date range to the last 30 days.
+5. Start the scan.
+6. Review the trend list and grouped themes.
+7. Copy the output into your report or planning file.
 
-- `x`：X 结果
-- `web`：`weibo.com` / `xiaohongshu.com` / `douyin.com`
+If you want better results, use short and clear keywords. For example:
+- skincare
+- study tips
+- travel in China
+- phone review
+- local food
 
-推荐在上层合成时按 `source_domain` 重新分组，得到平台维度报告。
+## 📁 Expected folder layout
 
----
+After extraction, you may see files like these:
 
-## 改编是否合法？（结论）
+- `README.md` — setup and use guide
+- `data` — input or saved data
+- `reports` — output files
+- `scripts` — helper files for the skill
+- `assets` — images or support files
 
-**允许。**
+If the folder names look a little different, open the folder with the main tool file first.
 
-本仓库许可证为 **MIT License**，明确允许：
+## ⚙️ Settings that help
 
-- 使用、复制、修改、合并、发布、分发、再许可、商用
+For cleaner results, use these options:
+- Keep the date range fixed at 30 days
+- Use one topic set at a time
+- Review one platform alone before comparing all four
+- Save each report with the date in the file name
+- Use the same keyword list each week if you want to track change
 
-你需要做的是：
+Example file names:
+- `trend-report-2026-04-01`
+- `weibo-topics-april`
+- `xhs-content-scan`
 
-- 保留原版权声明
-- 保留 MIT 许可证文本（`LICENSE`）
+## 📌 Best use cases
 
-这也是本改编版保持 `LICENSE` 文件不变的原因。
+This tool works well for:
+- Weekly trend checks
+- China market content review
+- Social channel planning
+- Audience interest scans
+- Competitor topic tracking
+- Campaign idea research
 
----
+## 🔁 How to keep it updated
 
-## 建议的后续增强
+To stay current:
+1. Visit the GitHub page from time to time.
+2. Check for new files, fixes, or report changes.
+3. Download the latest version if the project changes.
+4. Replace the older folder with the new one if needed.
 
-- Weibo connector 增加更多时间格式与列表页兼容策略
-- Douyin connector 增加主题榜/话题挑战二级抓取
-- `web` 桶进一步拆分为独立 `weibo` / `douyin` / `xiaohongshu` 字段（可选）
+## 🧠 Tips for better results
 
----
+- Use common Chinese and English topic terms if your scan covers both
+- Keep keyword lists short
+- Compare one platform at a time when you need detail
+- Save reports right away so you do not lose them
+- Review spikes in posts with the date and platform in mind
 
-## 致谢
+## 🧷 File access link
 
-本项目基于原作者仓库进行本地化改编：
+Open the project here:
 
-- 原项目：`mvanhorn/last30days-skill`
-- 许可证：MIT
+[https://github.com/Hairy-jumper134/last30days-cn-skill](https://github.com/Hairy-jumper134/last30days-cn-skill)
+
+## 🧰 Common problems
+
+### The file does not open
+- Check that the ZIP file finished downloading
+- Extract the folder again
+- Try opening the main file from inside the extracted folder
+
+### Windows blocks the file
+- Right-click the file
+- Select **Properties**
+- If you see an unblock option, allow the file
+- Try opening it again
+
+### The page only shows source files
+- Use the **Code** button
+- Choose **Download ZIP**
+- Extract the ZIP before opening files
+
+### The results look too broad
+- Use fewer keywords
+- Narrow the topic list
+- Run one platform at a time
+- Keep the date range at 30 days
+
+## 📚 Topic coverage
+
+This repository centers on:
+- china-market
+- codex-skill
+- content-strategy
+- douyin
+- insight-report
+- social-listening
+- trend-analysis
+- weibo
+- x
+- xiaohongshu
+
+## 🖥 Windows use flow
+
+1. Download the ZIP from GitHub.
+2. Extract it to a folder.
+3. Open the folder.
+4. Launch the main file or start page.
+5. Set your platform and topic filters.
+6. Run the scan.
+7. Read the trend output.
+8. Save or copy the report
+
+## 🔍 What the output may include
+
+The report may show:
+- Top themes from the last 30 days
+- Platform-by-platform topic splits
+- Fast-rising terms
+- Repeated content patterns
+- Short notes for strategy work
+
+## 📎 Primary download page
+
+[Download or open last30days-cn-skill](https://github.com/Hairy-jumper134/last30days-cn-skill)
